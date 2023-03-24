@@ -110,9 +110,9 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public void completeTrip(Integer tripId){
 		//Complete the trip having given trip Id and update TripBooking attributes accordingly
-		TripBooking bookTrip = tripBookingRepository2.findById(tripId).get();
-		bookTrip.setStatus(TripStatus.COMPLETED);
-		bookTrip.getDriver().getCab().setAvailable(true);
-		tripBookingRepository2.save(bookTrip);
+		TripBooking bookedTrip = tripBookingRepository2.findById(tripId).get();
+		bookedTrip.setStatus(TripStatus.COMPLETED);
+		bookedTrip.getDriver().getCab().setAvailable(true);
+		tripBookingRepository2.save(bookedTrip);
 	}
 }

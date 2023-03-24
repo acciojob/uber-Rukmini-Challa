@@ -1,19 +1,10 @@
 package com.driver.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
 import javax.persistence.*;
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
 
 @Entity
 @Table(name = "Admin")
-public class Admin {
+public class Admin{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +13,36 @@ public class Admin {
     String username;
 
     String password;
+
+    public Admin() {
+
+    }
+
+    public int getAdminId() {
+        return adminId;
+    }
+
+    public void setAdminId(int adminId) {
+        this.adminId = adminId;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
+
+
 
 
